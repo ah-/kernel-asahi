@@ -23,7 +23,16 @@ PHONY := __all
 __all:
 
 # Set RHEL variables
+# Note that this ifdef'ery is required to handle when building with
+# the O= mechanism (relocate the object file results) due to upstream
+# commit 67d7c302 which broke our RHEL include file
+ifneq ($(realpath source),)
+include $(realpath source)/Makefile.rhelver
+else
+ifneq ($(realpath Makefile.rhelver),)
 include Makefile.rhelver
+endif
+endif
 
 # We are using a recursive build, so we need to do a little thinking
 # to get the ordering right.
@@ -201,9 +210,6 @@ endif
 
 this-makefile := $(lastword $(MAKEFILE_LIST))
 abs_srctree := $(realpath $(dir $(this-makefile)))
-
-# Set RHEL variables
-include $(abs_srctree)/Makefile.rhelver
 
 ifneq ($(words $(subst :, ,$(abs_srctree))), 1)
 $(error source directory cannot contain spaces or colons)
