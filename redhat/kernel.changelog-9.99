@@ -1,3 +1,30 @@
+* Tue Jul 11 2023 Justin M. Forbes <jforbes@fedoraproject.org> [6.4.3-0]
+- drm/amd: Don't try to enable secure display TA multiple times (Mario Limonciello)
+- drm/amdgpu: fix number of fence calculations (Christian König)
+- drm/amdgpu: check RAS irq existence for VCN/JPEG (Tao Zhou)
+- drm/amd/pm: add abnormal fan detection for smu 13.0.0 (Kenneth Feng)
+- drm/amdgpu/sdma4: set align mask to 255 (Alex Deucher)
+- drm/amd/pm: revise the ASPM settings for thunderbolt attached scenario (Evan Quan)
+- drm/amdgpu: Skip mark offset for high priority rings (Jiadong Zhu)
+- drm/amdgpu: make sure that BOs have a backing store (Christian König)
+- drm/amdgpu: make sure BOs are locked in amdgpu_vm_get_memory (Christian König)
+- Linux 6.4.3 (Greg Kroah-Hartman)
+- fork: lock VMAs of the parent process when forking (Suren Baghdasaryan)
+- bootmem: remove the vmemmap pages from kmemleak in free_bootmem_page (Liu Shixin)
+- mm: call arch_swap_restore() from do_swap_page() (Peter Collingbourne)
+- mm: lock newly mapped VMA with corrected ordering (Hugh Dickins)
+- mm: lock newly mapped VMA which can be modified after it becomes visible (Suren Baghdasaryan)
+- mm: lock a vma before stack expansion (Suren Baghdasaryan)
+- fedora: arm: some minor updates (Peter Robinson)
+- fedora: bluetooth: enable AOSP extensions (Peter Robinson)
+- Fix up buildReqs for UKI (Justin M. Forbes)
+- mm: disable CONFIG_PER_VMA_LOCK until its fixed (Suren Baghdasaryan)
+- fork: lock VMAs of the parent process when forking (Suren Baghdasaryan)
+- Turn on NET_VENDOR_QUALCOMM so that rmnet builds (Justin M. Forbes)
+- Fix missing rhel config (Justin M. Forbes)
+- Linux v6.4.3
+Resolves: 
+
 * Wed Jul 05 2023 Justin M. Forbes <jforbes@fedoraproject.org> [6.4.2-0]
 - Linux v6.4.2
 Resolves: 
