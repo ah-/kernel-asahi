@@ -1,3 +1,17 @@
+* Wed Jul 19 2023 Justin M. Forbes <jforbes@fedoraproject.org> [6.4.4-0]
+- move ownership of /lib/modules/<ver>/ to kernel-core (Thorsten Leemhuis)
+- Let kernel-modules-core own the files depmod generates. (Thorsten Leemhuis)
+- Add more bugs fixed in 6.4.4 (Justin M. Forbes)
+- Add some bugs to be fixed in 6.4.4 (Justin M. Forbes)
+- Add kunit configs for 6.4.4 (Justin M. Forbes)
+- Add hid-uclogic-test to mod-internal.list (Thorsten Leemhuis)
+- Add input_test to mod-intenal.list (Thorsten Leemhuis)
+- fedora: wifi: tweak ZYDAS WiFI config options (Peter Robinson)
+- Fix module filters for aarch64 and ppc (Justin M. Forbes)
+- Fix up some config mismatches (Justin M. Forbes)
+- Linux v6.4.4
+Resolves: 
+
 * Tue Jul 11 2023 Justin M. Forbes <jforbes@fedoraproject.org> [6.4.3-0]
 - drm/amd: Don't try to enable secure display TA multiple times (Mario Limonciello)
 - drm/amdgpu: fix number of fence calculations (Christian König)
