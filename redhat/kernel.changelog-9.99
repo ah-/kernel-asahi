@@ -1,3 +1,7 @@
+* Thu Jul 27 2023 Augusto Caringi <acaringi@redhat.com> [6.4.7-0]
+- Linux v6.4.7
+Resolves: 
+
 * Mon Jul 24 2023 Augusto Caringi <acaringi@redhat.com> [6.4.6-0]
 - Change pathfix.py to %%py3_shebang_fix (Justin M. Forbes)
 - Add config option coming to a stable update soon (Justin M. Forbes)
