@@ -1,3 +1,12 @@
+* Tue Aug 08 2023 Justin M. Forbes <jforbes@fedoraproject.org> [6.4.9-0]
+- Config updates for 6.4.9 (Justin M. Forbes)
+- Update BugsFixed for 6.4.9 (Justin M. Forbes)
+- Add some BugsFixed for the 6.4.9 update (Justin M. Forbes)
+- ACPI: resource: revert "Remove "Zen" specific match and quirks" (Hans de Goede)
+- arm: i.MX: Some minor NXP i.MX cleanups (Peter Robinson)
+- Linux v6.4.9
+Resolves: 
+
 * Thu Aug 03 2023 Augusto Caringi <acaringi@redhat.com> [6.4.8-0]
 - redhat: configs: Disable CONFIG_CRYPTO_STATS since performance issue for storage (Kate Hsuan) [2227793]
 - Linux v6.4.8
