@@ -1,3 +1,12 @@
+* Wed Aug 16 2023 Justin M. Forbes <jforbes@fedoraproject.org> [6.4.11-0]
+- Add more bugfixes for 6.4.11 (Justin M. Forbes)
+- Turn off DMABUF_SYSFS_STATS (Justin M. Forbes)
+- Revert "KVM: SEV: remove ghcb variable declarations" (Justin M. Forbes)
+- Add bug fixed for 6.4.11 (Justin M. Forbes)
+- redhat: Add arm64-16k kernel flavor scaffold for 16K page-size'd AArch64 (Neal Gompa)
+- Linux v6.4.11
+Resolves: 
+
 * Fri Aug 11 2023 Justin M. Forbes <jforbes@fedoraproject.org> [6.4.10-0]
 - More security bug fixes for 6.4.10 (Justin M. Forbes)
 - KVM: SEV: remove ghcb variable declarations (Paolo Bonzini)
