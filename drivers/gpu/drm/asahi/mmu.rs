@@ -1015,6 +1015,7 @@ impl Uat {
                 return Err(EINVAL);
             }
             let ret = bindings::of_address_to_resource(np, 0, res.as_mut_ptr());
+            #[cfg(CONFIG_OF_DYNAMIC)]
             bindings::of_node_put(np);
 
             if ret < 0 {
