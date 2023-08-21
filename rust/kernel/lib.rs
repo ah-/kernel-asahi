@@ -14,6 +14,7 @@
 #![no_std]
 #![feature(allocator_api)]
 #![feature(associated_type_defaults)]
+#![feature(cfg_version)]
 #![feature(coerce_unsized)]
 #![feature(const_mut_refs)]
 #![feature(const_refs_to_cell)]
