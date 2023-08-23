@@ -80,4 +80,4 @@ ifneq ("$(ZSTREAM)", "yes")
 endif
 
 # kernel variant extra version suffix
-VARIANTSTREAM = .asahi
+VARIANTSTREAM = .asahi-isp
