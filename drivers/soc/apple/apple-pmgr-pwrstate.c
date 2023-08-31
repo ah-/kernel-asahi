@@ -44,6 +44,7 @@ struct apple_pmgr_ps {
 	struct regmap *regmap;
 	u32 offset;
 	u32 min_state;
+	u32 pre_state;
 };
 
 #define genpd_to_apple_pmgr_ps(_genpd) container_of(_genpd, struct apple_pmgr_ps, genpd)
@@ -110,6 +111,15 @@ static int apple_pmgr_ps_power_on(struct generic_pm_domain *genpd)
 
 static int apple_pmgr_ps_power_off(struct generic_pm_domain *genpd)
 {
+	// FIXME please makes this better
+	struct apple_pmgr_ps *ps = genpd_to_apple_pmgr_ps(genpd);
+	if (ps->pre_state != APPLE_PMGR_PS_PWRGATE) {
+		u32 reg;
+		regmap_read(ps->regmap, ps->offset, &reg);
+		regmap_write(ps->regmap, ps->offset, reg | ps->pre_state);
+		regmap_write(ps->regmap, ps->offset, APPLE_PMGR_PS_PWRGATE);
+		return 0;
+	}
 	return apple_pmgr_ps_set(genpd, APPLE_PMGR_PS_PWRGATE, false);
 }
 
@@ -200,6 +210,7 @@ static int apple_pmgr_ps_probe(struct platform_device *pdev)
 	int ret;
 	const char *name;
 	bool active;
+	u32 pre_state;
 
 	regmap = syscon_node_to_regmap(node->parent);
 	if (IS_ERR(regmap))
@@ -233,6 +244,10 @@ static int apple_pmgr_ps_probe(struct platform_device *pdev)
 	if (ret == 0 && ps->min_state <= APPLE_PMGR_PS_ACTIVE)
 		regmap_update_bits(regmap, ps->offset, APPLE_PMGR_FLAGS | APPLE_PMGR_PS_MIN,
 				   FIELD_PREP(APPLE_PMGR_PS_MIN, ps->min_state));
+
+	ret = of_property_read_u32(node, "apple,pre-state", &pre_state);
+	if (ret == 0 && pre_state != APPLE_PMGR_PS_PWRGATE)
+		ps->pre_state = pre_state;
 
 	active = apple_pmgr_ps_is_active(ps);
 	if (of_property_read_bool(node, "apple,always-on")) {
