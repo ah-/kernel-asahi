@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-only
 
 config VIDEO_APPLE_ISP
-	tristate "Apple Sillicon Image Signal Processor driver"
+	tristate "Apple Silicon Image Signal Processor driver"
 	depends on ARCH_APPLE || COMPILE_TEST
 	depends on V4L_PLATFORM_DRIVERS
 	depends on VIDEO_DEV
