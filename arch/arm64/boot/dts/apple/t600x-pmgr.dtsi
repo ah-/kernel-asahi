@@ -1366,6 +1366,7 @@
 		#reset-cells = <0>;
 		label = DIE_LABEL(isp_sys);
 		power-domains = <&DIE_NODE(ps_afnc2_lw1)>;
+        apple,always-on; /* Locked on for ISP DART CTRR */
 	};
 
 	DIE_NODE(ps_venc_sys): power-controller@3b0 {
@@ -2010,7 +2011,6 @@
 		#reset-cells = <0>;
 		label = "isp_set0";
 		power-domains = <&ps_isp_sys>;
-		apple,pre-state = <0x400>;
 	};
 
 	DIE_NODE(ps_isp_set1): power-controller@4008 {
@@ -2020,7 +2020,6 @@
 		#reset-cells = <0>;
 		label = "isp_set1";
 		power-domains = <&ps_isp_set0>;
-		apple,pre-state = <0x1400>;
 	};
 
 	DIE_NODE(ps_isp_set2): power-controller@4010 {
@@ -2030,7 +2029,6 @@
 		#reset-cells = <0>;
 		label = "isp_set2";
 		power-domains = <&ps_isp_set1>;
-		apple,pre-state = <0x1400>;
 	};
 
 	DIE_NODE(ps_isp_set3): power-controller@4018 {
@@ -2085,41 +2083,5 @@
 		#reset-cells = <0>;
 		label = "isp_set8";
 		power-domains = <&ps_isp_set7>;
-	};
-
-	DIE_NODE(ps_isp_set9): power-controller@4048 {
-		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4048 4>;
-		#power-domain-cells = <0>;
-		#reset-cells = <0>;
-		label = "isp_set9";
-		power-domains = <&ps_isp_set8>;
-	};
-
-	DIE_NODE(ps_isp_set10): power-controller@4050 {
-		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4050 4>;
-		#power-domain-cells = <0>;
-		#reset-cells = <0>;
-		label = "isp_set10";
-		power-domains = <&ps_isp_set9>;
-	};
-
-	DIE_NODE(ps_isp_set11): power-controller@4058 {
-		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4058 4>;
-		#power-domain-cells = <0>;
-		#reset-cells = <0>;
-		label = "isp_set11";
-		power-domains = <&ps_isp_set10>;
-	};
-
-	DIE_NODE(ps_isp_set12): power-controller@4060 {
-		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4060 4>;
-		#power-domain-cells = <0>;
-		#reset-cells = <0>;
-		label = "isp_set12";
-		power-domains = <&ps_isp_set11>;
 	};
 };
