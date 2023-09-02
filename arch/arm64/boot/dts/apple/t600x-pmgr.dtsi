@@ -2013,27 +2013,27 @@
 		power-domains = <&ps_isp_sys>;
 	};
 
-	DIE_NODE(ps_isp_set1): power-controller@4008 {
+	DIE_NODE(ps_isp_set1): power-controller@4010 {
 		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4008 4>;
+		reg = <0x4010 4>;
 		#power-domain-cells = <0>;
 		#reset-cells = <0>;
 		label = "isp_set1";
 		power-domains = <&ps_isp_set0>;
 	};
 
-	DIE_NODE(ps_isp_set2): power-controller@4010 {
+	DIE_NODE(ps_isp_set2): power-controller@4008 {
 		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4010 4>;
+		reg = <0x4008 4>;
 		#power-domain-cells = <0>;
 		#reset-cells = <0>;
 		label = "isp_set2";
 		power-domains = <&ps_isp_set1>;
 	};
 
-	DIE_NODE(ps_isp_set3): power-controller@4018 {
+	DIE_NODE(ps_isp_set3): power-controller@4028 {
 		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4018 4>;
+		reg = <0x4028 4>;
 		#power-domain-cells = <0>;
 		#reset-cells = <0>;
 		label = "isp_set3";
@@ -2049,18 +2049,18 @@
 		power-domains = <&ps_isp_set3>;
 	};
 
-	DIE_NODE(ps_isp_set5): power-controller@4028 {
+	DIE_NODE(ps_isp_set5): power-controller@4030 {
 		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4028 4>;
+		reg = <0x4030 4>;
 		#power-domain-cells = <0>;
 		#reset-cells = <0>;
 		label = "isp_set5";
 		power-domains = <&ps_isp_set4>;
 	};
 
-	DIE_NODE(ps_isp_set6): power-controller@4030 {
+	DIE_NODE(ps_isp_set6): power-controller@4018 {
 		compatible = "apple,t6000-pmgr-pwrstate", "apple,pmgr-pwrstate";
-		reg = <0x4030 4>;
+		reg = <0x4018 4>;
 		#power-domain-cells = <0>;
 		#reset-cells = <0>;
 		label = "isp_set6";
