@@ -113,6 +113,10 @@ static int apple_isp_resv_region(struct apple_isp *isp, int index)
 
 	err = iommu_map(isp->domain, resv->iova, resv->phys, resv->size,
 			IOMMU_READ | IOMMU_WRITE, GFP_KERNEL);
+	if (err == -EEXIST) {
+		isp_dbg(isp, "already mapped, continuing\n");
+		return 0;
+	}
 	if (err < 0)
 		dev_err(dev, "failed to map reserved region\n");
 
